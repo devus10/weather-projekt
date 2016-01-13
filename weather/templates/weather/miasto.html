@@ -1,0 +1,48 @@
+{% extends "weather/szablon.html" %}
+{% load staticfiles %}
+{% block title %}- pogoda dla miasta {% endblock %}
+{% block jumbotron-title %}
+    {% if miasto != '' %}
+        Pogoda dla miasta: <b>{{ miasto }}</b>
+    {% endif %}
+    {% endblock %}
+{% block jumbotron-content %}
+
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Temperatura</th>
+                <th>Wilgotność</th>
+                <th>Zachmurzenie</th>
+                <th>Ciśnienie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ temperatura }}°C</td>
+                <td>{{ wilgotnosc }}%</td>
+                <td>{{ zachmurzenie }}%</td>
+                <td>{{ cisnienie }}hPa</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {% include "weather/popup_miasto.html" %}
+    {% include "weather/popup_wspolrzedne.html" %}
+    {% include "weather/popup_prognoza.html" %}
+
+    <br/><br/>
+    <button type="button" class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_miasto">Nazwa miasta
+    </button>
+
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_wspolrzedne">Współrzędne
+    </button>
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_prognoza">Prognoza pogody dla miasta
+    </button>
+
+{% endblock %}

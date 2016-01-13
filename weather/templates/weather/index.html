@@ -1,0 +1,23 @@
+{% extends "weather/szablon.html" %}
+{% load staticfiles %}
+{% block title %}- sprawdź pogodę dla swojego miasta!{% endblock %}
+{% block jumbotron-title %}Sprawdź pogodę dla swojego miasta{% endblock %}
+{% block jumbotron-content %}
+    <br/>
+    Wybierz odpowiednią opcję:
+    <br/><br/>
+    {% include "weather/popup_miasto.html" %}
+    {% include "weather/popup_wspolrzedne.html" %}
+    {% include "weather/popup_prognoza.html" %}
+    <button type="button" class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_miasto">Nazwa miasta
+    </button>
+
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_wspolrzedne">Współrzędne
+    </button>
+    <button class="btn btn-primary"
+            data-toggle="modal" data-target="#popup_prognoza">Prognoza pogody dla miasta
+    </button>
+
+{% endblock %}

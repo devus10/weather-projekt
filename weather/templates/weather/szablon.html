@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'node_modules/bootstrap/dist/css/bootstrap-theme.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <title>Pogoda{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h2>{% block jumbotron-title %}{% endblock %}</h2><br/>
+
+        <p>{% block jumbotron-content %}{% endblock %}</p>
+    </div>
+</div>
+<div class="panel panel-footer">
+    <label class="col-sm-7"></label>
+
+    <div id="div-footer"> <a href="{% url 'weather:index' %}">Idź do strony głównej</a> &copy; 2016 Paweł Nogański & Mateusz Połeć</div>
+</div>
+</body>
+</html>

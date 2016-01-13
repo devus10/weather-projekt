@@ -1,0 +1,24 @@
+<div class="modal fade" id="popup_miasto" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-szczegoly-szkolenia">Podaj nazwę miasta</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="{% url 'weather:popup_miasto' %}" method="post" >
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="miasto">Miasto (preferowana angielska nazwa)</label>
+                        <input type="text" name="miasto" class="form-control" id="miasto">
+                    </div>
+                    <button type="submit" class="btn btn-default">Sprawdź pogodę</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+            </div>
+        </div>
+
+    </div>
+</div>
